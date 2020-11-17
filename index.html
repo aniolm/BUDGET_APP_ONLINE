@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
+  <title>Home Budget App</title>
+  <meta name="description" content="Simple, online budgeting app that helps users track their incomes and purchases">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:title" content="">
@@ -18,17 +18,70 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
+<div id="container">
+  <header>
+	
+	<nav>
+		<div>
+		<a href="#home" id="site-header"><i class="fas fa-coins"></i>&nbsp;HOME BUDGET APP</a>
+				
+		<div id="site-nav">
+			<a href="#Register">Register</a>
+			<a href="#Login">Login</a>
+		</div>
+		<a href="javascript:void(0);" id="nav-icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
+		</div>
+		
+		<div id="action-nav">
+			<a href="#Register">Register</a>
+			<a href="#Login">Login</a>
+		</div>
+		
+	</nav>
+	
+	
+  </header>
+  
+  <main>
+	<section>
+		<h1>Probably the best budgeting app in the world</h1>
+		<p>Track your cash, discover new ways to save and build your credit score with one click.</p>
+	</section>
+	<section>
+		<div id="login">
+		<form>
+			<label for="uname"><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="uname" required>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="psw" required>
+
+			<button type="submit">Login</button>
+		</form>
+		<div id="password">
+		<span>Forgot <a href="#password">password</a>?</span>
+		</div>
+		</div>
+	</section>
+  </main>
+  
+  <footer>
+	<span>&copy; Copyright 2020 <a href="#asma">asma.wroclaw.pl</a></span>
+  </footer>
+</div>
+	
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
@@ -36,6 +89,17 @@
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script>
+	function myFunction() {
+	var x = document.getElementById("action-nav");
+	if (x.style.display === "block") {
+    x.style.display = "none";
+	} 
+	else {
+    x.style.display = "block";
+    }
+    }
+   </script>
 </body>
 
 </html>

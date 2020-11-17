@@ -11,10 +11,13 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+
 html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.4;
+    color: #000000;
+    font: 17px/1.4 "Open Sans",sans-serif;
+    text-align: center;
 }
 
 /*
@@ -86,6 +89,127 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+body{
+	background-color:#000000;
+}
+
+h1 {
+	margin: 5px 0px;
+}
+p {
+	margin: 0px;
+}
+
+
+#container {
+    margin: 0 auto;
+    max-width: 760px;      
+}
+
+header{
+     min-height: 65px;
+     background-color: #42BD4A; 
+}
+
+#site-header{
+    font-size: 22px;
+    font-weight: 700;   
+    float: left;
+}
+
+#site-nav{
+	float: right;
+    display: none;
+}
+
+#action-nav{
+    display: none;
+}
+
+#nav-icon{
+    float: right;
+    font-size: 18px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+
+nav a {
+	display: inline-block;
+    color: #ffffff;
+    text-align: center;
+    line-height: 65px;
+    text-decoration: none;
+    padding: 0px 20px;
+}
+
+nav a:hover {
+  background-color: #000000;
+}
+
+
+main {       
+     clear:both;
+	 background-color: #ffffff;
+     color: #49704C;
+}
+
+section {
+	padding: 10px 15px;
+}
+
+#login{
+	width: 320px;
+	margin:auto;
+	text-align: left;
+}
+
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: block;
+	border: 1px solid #49704C;
+	box-sizing: border-box;
+}
+
+button {
+	background-color: #9DF2A3;
+	color: #49704C;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+#password{
+	text-align: right;
+	font-size: 12px;
+	
+}
+
+footer{
+     height: 65px;
+     text-align: center;    
+	 color: #ffffff;
+	 font-size: 14px;
+     background-color: #42BD4A; 
+}
+
+footer a {
+	color: #ffffff;
+	text-decoration: none;
+	line-height: 65px;
+}
 
 /* ==========================================================================
    Helper classes
@@ -177,7 +301,19 @@ textarea {
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
-}
+
+	#site-nav{
+	display: block;
+	}
+
+	#nav-icon{
+	display: none;
+	}
+	
+	#action-nav{
+	display: none;
+	}
+
 
 @media print,
   (-webkit-min-device-pixel-ratio: 1.25),
@@ -260,4 +396,7 @@ textarea {
     page-break-after: avoid;
   }
 }
+
+
+
 
