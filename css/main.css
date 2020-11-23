@@ -161,23 +161,34 @@ section {
 	padding: 10px 15px;
 }
 
-#login{
+.forms{
 	width: 320px;
 	margin:auto;
 	text-align: left;
 }
 
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password] ,input[type=date], input[type=number]{
 	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
 	display: block;
 	border: 1px solid #49704C;
 	box-sizing: border-box;
+	color: #49704C;
 }
 
-button {
+select{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: block;
+	border: 1px solid #49704C;
+	box-sizing: border-box;
+	color: #49704C;
+}
+
+button, input[type=button] {
 	background-color: #9DF2A3;
 	color: #49704C;
 	padding: 14px 20px;
@@ -185,6 +196,10 @@ button {
 	border: none;
 	cursor: pointer;
 	width: 100%;
+}
+
+button.add, input.cancel{
+	width: 49%;
 }
 
 button:hover {
