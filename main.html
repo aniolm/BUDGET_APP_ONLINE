@@ -1,0 +1,356 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Home Budget App</title>
+  <meta name="description" content="Simple, online budgeting app that helps users track their incomes and purchases">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body onload="setDefaultDate()">
+<div id="container">
+  <header>
+	
+	<nav>
+		<div>
+		<a href="#home" id="site-header"><i class="fas fa-coins"></i>&nbsp;HOME BUDGET APP</a>
+				
+		<div id="site-nav">
+			<a href="settings.html">Settings</a>
+			<a href="index.html">Logout</a>
+		</div>
+		<a href="javascript:void(0);" id="nav-icon" onclick="showMenu()">
+			<i class="fa fa-bars"></i>
+		</a>
+		</div>
+		
+		<div id="mobile-nav">
+			<a href="sttings.html">Settings</a>
+			<a href="index.html">Logout</a>
+		</div>
+		
+	</nav>
+	
+	
+  </header>
+  
+  <main>
+	<section>
+	<div class="clearfix">
+		<div class="section-heading">
+			<h2>Budget</h2>
+		</div>	
+       	<select class="month-picker" name="month" required>
+				<option value="cmonth">Current month</option>
+				<option value="lmonth">Last month</option>
+				<option value="speriod">Selected period</option>
+		<select>	
+	
+	</div>
+	<div>
+		<hr>
+	</div>	
+	<div class="clearfix">
+		<div class="column">
+		<canvas id="budgetChart" width="400px" height="400px"></canvas>
+		</div>
+		<div class="column">
+			<div>
+				<h3>Planned budget</h3>
+			</div>
+			<div>
+				<h3><hr></h3>
+			</div>
+			<div class="centered">
+				Planned incomes: 6000PLN
+			</div>
+			<div class="centered">
+				Planned expenses: 1600PLN
+			</div>
+			<div class="centered">
+				To be disposed: 4400PLN
+			</div>
+			<div>
+				<h3>Actual budget</h3>
+			</div>
+			<div>
+				<h3><hr></h3>
+			</div>
+			<div class="centered">
+				Actual incomes: 6000PLN
+			</div>
+			<div class="centered">
+				Actual expenses: 1700PLN
+			</div>
+			<div class="centered">
+				To be spent: -100PLN
+			</div>
+			<div class="centered">
+				<h3>Stop spending money!!!</h3>
+			</div>		
+		</div>
+	</div>
+	</section>
+	<section>
+	<div class="clearfix">
+		<div class="section-heading">
+			<h2>Incomes</h2>
+		</div>
+			<a class="content-nav" href="income.html">Add income</a>
+		    <a class="content-nav" href="incomes.html">Details</a>
+	</div>
+	<div>
+		<hr>
+	</div>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>Category</th>
+					<th>Planned</th>
+					<th>Earned</th>
+					<th>Difference</th>
+					<th>Budget</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Sallary</td>
+					<td>5400PLN</td>
+					<td>5400PLN</td>
+					<td>0PLN</td>
+					<td>90%</td>
+				</tr>
+				<tr>
+					<td>Bonus money</td>
+					<td>300PLN</td>
+					<td>300PLN</td>
+					<td>0PLN</td>
+					<td>5%</td>
+				</tr>
+				<tr>
+					<td>Earned interest</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Rental property</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Sold items</td>
+					<td>300PLN</td>
+					<td>300PLN</td>
+					<td>0PLN</td>
+					<td>5%</td>
+				</tr>
+				<tr>
+					<td>Others</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	</section>
+	<section>
+	<div class="clearfix">
+		<div class="section-heading">
+			<h2>Expenses</h2>
+		</div>
+			<a class="content-nav" href="expense.html">Add expense</a>
+		    <a class="content-nav" href="expenses.html">Details</a>
+	</div>
+	<div>
+		<hr>
+	</div>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>Category</th>
+					<th>Planned</th>
+					<th>Spent</th>
+					<th>Difference</th>
+					<th>Budget</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>Food</td>
+					<td>800PLN</td>
+					<td>900PLN</td>
+					<td>100PLN</td>
+					<td>15%</td>
+				</tr>
+				<tr>
+					<td>Housing</td>
+					<td>500PLN</td>
+					<td>500PLN</td>
+					<td>0PLN</td>
+					<td>8.3%</td>
+				</tr>
+				<tr>
+					<td>Transportation</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Utilities</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Clothing</td>
+					<td>300PLN</td>
+					<td>300PLN</td>
+					<td>0PLN</td>
+					<td>5%</td>
+				</tr>
+				<tr>
+					<td>Kids</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Healthcare</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Insurance</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Vacation</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Education</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Hobbies</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Savings</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Debts</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Donation</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Others</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0PLN</td>
+					<td>0%</td>
+				</tr>
+	
+			</tbody>
+		</table>
+	</div>
+	</section>
+  </main>
+  
+  <footer>
+	<span>&copy; Copyright 2020 <a href="#asma">asma.wroclaw.pl</a></span>
+  </footer>
+</div>
+	
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/vendor/Chart.bundle.min.js"></script>
+ 
+  <script src="js/main.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/plugins.js"></script>
+  
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script>
+	function showMenu() {
+	var x = document.getElementById("mobile-nav");
+	if (x.style.display === "block") {
+    x.style.display = "none";
+	} 
+	else {
+    x.style.display = "block";
+    }
+    }
+   </script>
+   <script>
+   Date.prototype.toDateInputValue = (function() {
+   var local = new Date(this);
+   local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+   return local.toJSON().slice(0,10);});
+   
+   function setDefaultDate(){
+   document.getElementById("datePicker").value = new Date().toDateInputValue();
+   }
+   </script>
+</body>
+
+</html>

@@ -17,7 +17,7 @@ html {
     line-height: 1.4;
     color: #000000;
     font: 17px/1.4 "Open Sans",sans-serif;
-    text-align: center;
+    text-align: left;
 }
 
 /*
@@ -102,14 +102,37 @@ p {
 }
 
 
+table { 
+  font-family: sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #42BD4A;
+  color: white;
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #CCCCCC; 
+  text-align: left; 
+}
+
+
 #container {
     margin: 0 auto;
-    max-width: 760px;      
+    max-width: 760px;    	
 }
 
 header{
      min-height: 65px;
-     background-color: #42BD4A; 
+     background-color: #42BD4A;     
 }
 
 #site-header{
@@ -123,7 +146,7 @@ header{
     display: none;
 }
 
-#action-nav{
+#mobile-nav{
     display: none;
 }
 
@@ -151,14 +174,34 @@ nav a:hover {
 }
 
 
-main {       
-     clear:both;
+main {           
 	 background-color: #ffffff;
      color: #49704C;
 }
 
+ a.content-nav {
+	display: block;
+    color: #49704C;
+    text-align: center;
+    line-height: 28px;
+    text-decoration: none;
+    padding: 0px 5px;
+	margin: 5px 2px;
+	border: 1px solid #49704C;
+	float:right;
+	font-size: 12px;
+}
+
 section {
 	padding: 10px 15px;
+
+}
+
+h2 { margin: 2px;
+}
+
+.section-heading{
+	float: left;
 }
 
 .forms{
@@ -167,8 +210,19 @@ section {
 	text-align: left;
 }
 
+.column{
+	width: 100%;
+    float:left;
+	background-color: #ffffff;
+	padding: 0px 0px;
+}
 
-input[type=text], input[type=password] ,input[type=date], input[type=number]{
+.centered{
+	margin:auto;
+	width: 70%;
+}
+
+input[type=text], input[type=password] ,input[type=date], input[type=number] {
 	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
@@ -177,6 +231,7 @@ input[type=text], input[type=password] ,input[type=date], input[type=number]{
 	box-sizing: border-box;
 	color: #49704C;
 }
+
 
 select{
 	width: 100%;
@@ -202,6 +257,22 @@ button.add, input.cancel{
 	width: 49%;
 }
 
+input.add-entry {
+	width: 30%;
+	margin: 8px 8px;
+	display: block;
+	float: left;
+}
+
+select.month-picker{
+		
+		width: 145px;
+	    float: right;
+		padding: 8px 8px;
+		font-size: 12px;
+		margin: 2px 0px;
+	}
+	
 button:hover {
 	opacity: 0.8;
 }
@@ -213,11 +284,11 @@ button:hover {
 }
 
 footer{
-     height: 65px;
+	 height: 65px;
      text-align: center;    
 	 color: #ffffff;
 	 font-size: 14px;
-     background-color: #42BD4A; 
+     background-color: #42BD4A;
 }
 
 footer a {
@@ -325,9 +396,60 @@ footer a {
 	display: none;
 	}
 	
-	#action-nav{
+	#mobile-nav{
 	display: none;
 	}
+
+	.column{
+	width: 50%;
+	}
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px){
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Category"; }
+	td:nth-of-type(2):before { content: "Planned"; }
+	td:nth-of-type(3):before { content: "Actual"; }
+	td:nth-of-type(4):before { content: "Difference"; }
+	td:nth-of-type(5):before { content: "Budget"; }
+}
+
 
 
 @media print,
