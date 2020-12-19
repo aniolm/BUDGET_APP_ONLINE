@@ -1,3 +1,16 @@
+
+<?php
+	
+	session_start();
+	
+	if ((isset($_SESSION['loggedin'])) && ($_SESSION['loggedin']==true))
+	{
+		header('Location: main.php');
+		exit();
+	}
+    //phpinfo();
+?>
+
 <!doctype html>
 <html class="no-js h-100" lang="">
 
@@ -33,7 +46,7 @@
 	
 			<div class="col-sm-3 col-md-4 my-auto">
 			</div>
-			<form class="form-signin bg-light p-3 col-sm rounded my-auto mx-auto" >
+			<form class="form-signin bg-light p-3 col-sm rounded my-auto mx-auto" action="login.php" method="post">
 				<div class="bg-success text-light text-center rounded p-3 h4">
 					<i class="fas fa-coins"></i>
 					HOME BUDGET APP
@@ -48,6 +61,9 @@
 				<div class="form-group">
 					<label for="psw"><b>Password</b></label>
 					<input class="form-control" type="password" placeholder="Enter Password" name="psw" required>
+					<?php
+					if(isset($_SESSION['error']))	echo $_SESSION['error'];
+					?>	
 				</div>
 				<div class="checkbox mb-3">
 					<label>
@@ -58,11 +74,12 @@
 				<button class="btn btn-success btn-block" type="submit">Login</button>
 			
 				<div class="pt-3 text-center">
-					<span>Don't have account yet? <a class="text-decoration-none" href="register.html">Sign up.</a></span>
+					<span>Don't have account yet? <a class="text-decoration-none" href="signup.php">Sign up.</a></span>
 				</div>
 				<div class="text-center">
 				<p class="mt-4 mb-3 text-muted">Copyright &copy; 2020 asma.wroclaw.pl</p>
 				</div>
+					
 			</form>
 			<div class="col-sm-3 col-md-4 my-auto">
 			</div>
@@ -80,14 +97,14 @@
   <script src="js/vendor/jquery-3.5.1.min.js"></script>
   <script src="js/vendor/bootstrap.bundle.min.js"></script>
   
-
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!--
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
- 
+  -->
 </body>
 
 </html>
