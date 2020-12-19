@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	if (!isset($_SESSION['loggedin']))
+	{
+		header('Location: index.php');
+		exit();
+	}	
+?>
+
 <!doctype html>
 <html class="no-js h-100" lang="">
 
@@ -38,7 +47,7 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse" >
 		<ul class="navbar-nav ml-sm-auto flex-row justify-content-center">
 			<li class="nav-item ml-2 mr-2"><a href="#" class="nav-link">Settings</a></li>
-		    <li class="nav-item ml-2 mr-2"><a href="#" class="nav-link">Log-out</a><li>
+		    <li class="nav-item ml-2 mr-2"><a href="logout.php" class="nav-link">Log-out</a><li>
 		</ul>
 		<div>
 	</nav>
@@ -427,13 +436,13 @@
   <script src="js/vendor/bootstrap.bundle.min.js"></script>
   
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
-  
+  -->
   <script>
    Date.prototype.toDateInputValue = (function() {
    var local = new Date(this);
@@ -444,7 +453,7 @@
    document.getElementById("datePicker").value = new Date().toDateInputValue();
    }
    </script>
- 
+  
 </body>
 
 </html>
