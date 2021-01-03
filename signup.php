@@ -1,3 +1,7 @@
+<?php
+
+	session_start();
+?>
 <!doctype html>
 <html class="no-js h-100" lang="">
 
@@ -33,7 +37,7 @@
 	
 			<div class="col-sm-3 col-md-4 my-auto">
 			</div>
-			<form class="form-signin bg-light p-3 col-sm rounded my-auto">
+			<form class="form-signin bg-light p-3 col-sm rounded my-auto" action="register.php" method="post">
 				<div class="bg-success text-light text-center rounded p-3 h4">
 					<i class="fas fa-coins"></i>
 					HOME BUDGET APP
@@ -86,13 +90,13 @@
   <script src="js/vendor/bootstrap.bundle.min.js"></script>
   
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. 
   <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
- 
+  -->
 </body>
 
 </html>

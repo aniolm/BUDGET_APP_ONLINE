@@ -25,28 +25,37 @@
 		$psw = htmlentities($psw, ENT_QUOTES, "UTF-8");
 	
 		if ($result = @$connection->query(
-		sprintf("SELECT * FROM users WHERE name='%s' AND password='%s'",
-		mysqli_real_escape_string($connection,$uname),
-		mysqli_real_escape_string($connection,$psw))))
+		sprintf("SELECT * FROM users WHERE username='%s'",
+		mysqli_real_escape_string($connection,$uname))))
+
 		{
 			$no_users = $result->num_rows;
 			if($no_users>0)
 			{
-				$_SESSION['loggedin'] = true;
 				
 				$row = $result->fetch_assoc();
-				$_SESSION['id'] = $row['id'];
-				$_SESSION['name'] = $row['name'];
-				$_SESSION['email'] = $row['email'];
+				if (password_verify($psw, $row['password']))
+				{
+					$_SESSION['loggedin'] = true;
+					$_SESSION['id'] = $row['id'];
+					$_SESSION['username'] = $row['username'];
+					$_SESSION['email'] = $row['email'];
 				
 				
-				unset($_SESSION['error']);
-				$result->free_result();
+					unset($_SESSION['error']);
+					$result->free_result();
 				
-				header('Location: main.php');
+					header('Location: main.php');
+				}
+				else {
 				
+				$_SESSION['error'] = '<span class="text-warning">Wrong login or password!</span>';
+				header('Location: index.php');
 				
-			} else {
+			    }	
+			} 
+			
+			else {
 				
 				$_SESSION['error'] = '<span class="text-warning">Wrong login or password!</span>';
 				header('Location: index.php');
